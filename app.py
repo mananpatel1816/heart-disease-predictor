@@ -3,9 +3,9 @@ Heart Disease Detection — Streamlit UI
 Run: streamlit run app.py
 """
 
-import subprocess, pathlib
+import subprocess, pathlib, sys
 if not pathlib.Path("final_model.pkl").exists():
-    subprocess.run(["python", "train.py"], check=True)
+    subprocess.run([sys.executable, "train.py"], check=True)
 
 import streamlit as st
 import numpy as np
