@@ -3,11 +3,20 @@ Heart Disease Detection — Streamlit UI
 Run: streamlit run app.py
 """
 
+import subprocess, pathlib
+if not pathlib.Path("final_model.pkl").exists():
+    subprocess.run(["python", "train.py"], check=True)
+
 import streamlit as st
 import numpy as np
 import joblib
 from pathlib import Path
 import pandas as pd
+
+
+
+
+
 
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
